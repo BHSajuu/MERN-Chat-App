@@ -1,18 +1,26 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import ProfilePage from "./pages/ProfilePage";
+import SettingsPage from "./pages/SettingsPage";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   return (
-    <>
-      <div className="bg-amber-400 text-9xl text-indigo-600">Hello world</div>
-      <div className="badge badge-primary">Primary</div>
-      <div className="badge badge-secondary">Secondary</div>
-      <div className="badge badge-accent">Accent</div>
-      <div className="badge badge-neutral">Neutral</div>
-      <div className="badge badge-info">Info</div>
-      <div className="badge badge-success">Success</div>
-      <div className="badge badge-warning">Warning</div>
-      <div className="badge badge-error">Error</div>
-    </>
+    <div>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+      </Routes>
+    </div>
   );
 }
 
